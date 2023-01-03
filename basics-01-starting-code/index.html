@@ -20,9 +20,13 @@
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p>{{ message }}</p>
+      <p v-html="rawHTML"></p>
+      <p>{{ outputGoal() }}</p> <!-- Se puede llamar también a una función entre llaves, incluso se puede ejecutar código SIMPLE JavaScript, no se pueden hacer if ni nada de eso  -->
+      <p>{{ Math.random() }}</p>
+      <p>{{ outputCourseGoal() }}</p>
       <p>{{ dictionary.name}}, {{ dictionary.age}}, {{ dictionary.city}}</p>
       <p>{{ array[0] }}, {{ array[1] }}, {{ array[2] }}</p>
-      <p>Learn more about <a :href="linkedin">me</a>.</p>
+      <p>Learn more about <a :href="linkedin">me</a>.</p> <!-- En vez de :href también se puede poner v-bind:href="link", esto se hace con todos los atributos. -->
       <img :src="src" :alt="message">
     </section>
 
