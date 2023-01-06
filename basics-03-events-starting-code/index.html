@@ -21,11 +21,24 @@
       <button v-on:click="add">Add</button>
       <button v-on:click="remove">Remove</button>
       <button v-on:click="deleteNumber">Delete</button>
-      <p><input type="text" placeholder="How much do you want to increse?" v-model="number"></p>
+      <p>
+        <input
+          type="text"
+          placeholder="How much do you want to increse?"
+          v-model="number"
+        />
+      </p>
       <p>Result: {{ counter }}</p>
-       <!-- <p><input type="text"  v-model="name"></p> También se puede escribir el nombre a medida que se escribe de esta manera. -->
-        <p><input type="text" v-on:input="setName($event)"></p> <!-- El $event nos permite acceder al evento aunque tengamos que pasar más argumentos, ya que recibimos este elemento cuando NO le pasamos argumentos en la función -->
+      <!-- <p><input type="text"  v-model="name"></p> También se puede escribir el nombre a medida que se escribe de esta manera. -->
+      <p><input type="text" v-on:input="setName($event)" /></p>
+      <!--  El $event nos permite acceder al evento aunque tengamos que pasar más argumentos, ya que recibimos este elemento cuando NO le pasamos argumentos en la función -->
       <p>Your name: {{ name }}</p>
+
+      <form v-on:submit.prevent="submitForm">
+        <!-- EL v-on:submit.prevent es un modificador de eventos que se usa para prevenir la recarga de la página que hace el navegador cuando se envía un formulario https://vuejs.org/guide/essentials/event-handling.html#event-modifiers-->
+        <input type="text" />
+        <button>Submit</button>
+      </form>
     </section>
   </body>
 </html>
