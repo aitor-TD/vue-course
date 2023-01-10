@@ -22,9 +22,12 @@
       <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
       <!-- <input v-bind:value="name" type="text" v-on:input="setName($event, 'Schwarzmüller')"> -->
-      <input type="text" v-model="name">
+      <input type="text" v-model="name"> &nbsp;
+      <input type="text" v-model="lastName">
       <button v-on:click="resetInput">Reset input</button>
-      <p>Your Name: {{ name }}</p>
+      <!-- <p>Your Name: {{ name }}</p> -->
+      <p>Your Name: {{ fullname }}</p>
+      <!-- Al poner una función que no es un evento, vue la ejecuta otra vez cada vez que se cambia algo en la web, aunque no tenga nada que ver, esto es malo de cara al rendimiento de la web  -->
     </section>
   </body>
 </html>
